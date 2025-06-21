@@ -1,0 +1,44 @@
+<html>
+<head>
+   <title>Eulerian Video Magnification Demo</title>
+   <link rel="stylesheet" href="index.css">
+</head>
+<body>
+   <h1>Eulerian Video Magnification Demo</h1>
+   <div id="video-source" style="margin: 20px auto; width: 700px; text-align: center;">
+      <button id="useCameraBtn">Use Camera</button>
+      <button id="loadVideoBtn">Load Video File</button>
+      <input type="file" id="videoFileInput" accept="video/*" style="display:none;" />
+   </div>
+   <div id="video-panels" style="display: flex; gap: 20px; justify-content: center; align-items: flex-start;">
+      <div>
+         <h3>Original</h3>
+         <canvas id="originalCanvas" width="320" height="240" style="border:1px solid #ccc;"></canvas>
+      </div>
+      <div>
+         <h3>Eulerian Enhanced</h3>
+         <canvas id="enhancedCanvas" width="320" height="240" style="border:1px solid #ccc;"></canvas>
+      </div>
+   </div>
+   <div id="presets" style="margin: 20px auto; width: 700px; text-align: center;">
+      <button id="presetDefault">Default</button>
+      <button id="presetSkin">Max Skin Tone</button>
+      <button id="presetHeartbeat">Heartbeat</button>
+      <button id="presetSubtle">Subtle</button>
+   </div>
+   <div id="sliders" style="margin: 30px auto; width: 700px;">
+      <label>Alpha: <input type="range" id="alphaSlider" min="1" max="100" value="50" step="1"> <span id="alphaValue">50</span></label><br/>
+      <label>Lambda_c: <input type="range" id="lambdaSlider" min="1" max="100" value="16" step="1"> <span id="lambdaValue">16</span></label><br/>
+      <label>Exaggeration: <input type="range" id="exaggerationSlider" min="1" max="10" value="2" step="0.1"> <span id="exaggerationValue">2</span></label><br/>
+      <label>Chrom Attenuation: <input type="range" id="chromSlider" min="0" max="1" value="0.1" step="0.01"> <span id="chromValue">0.1</span></label><br/>
+      <label>r1: <input type="range" id="r1Slider" min="0" max="1" value="0.4" step="0.01"> <span id="r1Value">0.4</span></label><br/>
+      <label>r2: <input type="range" id="r2Slider" min="0" max="1" value="0.05" step="0.01"> <span id="r2Value">0.05</span></label><br/>
+      <label>Blur: <input type="range" id="blurSlider" min="0" max="5" value="1" step="0.1"> <span id="blurValue">1</span></label><br/>
+      <label><input type="checkbox" id="denoiseToggle"> Enable Denoising</label><br/>
+      <label>Denoise Strength: <input type="range" id="denoiseSlider" min="0" max="5" value="1" step="0.1"> <span id="denoiseValue">1</span></label><br/>
+   </div>
+   <script src="jsfeat.js"></script>
+   <script src="color.js"></script>
+   <script type="text/JavaScript" src="index.js"></script>
+</body>
+</html>
